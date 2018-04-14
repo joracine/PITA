@@ -42,7 +42,7 @@ def process_reset_priorities(request):
                         description='Feature, deliverable, or workstream that should not be planned to be worked on, but signal where the product should go next.',
                         weight=400).save()
 
-    return HttpResponseRedirect(reverse('list_priorities'))
+    return HttpResponseRedirect(reverse('reset_priorities_success'))
 
 class ResetPrioritiesSuccessView(generic.TemplateView):
-    template_name = 'pita/status/reset_success.html'
+    template_name = 'pita/priority/reset_success.html'

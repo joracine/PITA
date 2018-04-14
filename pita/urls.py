@@ -12,7 +12,7 @@ urlpatterns = [
     path('priority/reset/', views.process_reset_priorities, name='reset_priorities'),
     path('priority/reset_confirm/', views.ResetPrioritiesConfirmationView.as_view(),
          name='reset_priorities_confirmation'),
-    path('priority/reset_success/', views.process_reset_priorities, name='reset_priorities_success'),
+    path('priority/reset_success/', views.ResetPrioritiesSuccessView.as_view(), name='reset_priorities_success'),
 
     path('feature/list/', views.FeatureListView.as_view(), name='list_features'),
 
@@ -22,11 +22,11 @@ urlpatterns = [
 
     path('teams/list/', views.TeamListView.as_view(), name='list_teams'),
 
-    path('statuses/list/', views.StatusListView.as_view(), name='list_statuses'),
-    path('statuses/reset/', views.process_reset_statuses, name='reset_statuses'),
-    path('statuses/reset_confirm/', views.ResetStatusesConfirmationView.as_view(),
+    path('status/list/', views.StatusListView.as_view(), name='list_statuses'),
+    path('status/reset/', views.process_reset_statuses, name='reset_statuses'),
+    path('status/reset_confirm/', views.ResetStatusesConfirmationView.as_view(),
          name='reset_statuses_confirmation'),
-    path('statuses/reset_success/', views.ResetStatusesSuccessView.as_view(), name='reset_statuses_success'),
+    path('status/reset_success/', views.ResetStatusesSuccessView.as_view(), name='reset_statuses_success'),
 
     # Admin
     path('grappelli/', include('grappelli.urls')),
