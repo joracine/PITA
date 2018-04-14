@@ -30,7 +30,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python3 -m pita.env pita.env
+            python3 -m venv venv
             . pita.env/bin/activate
             pip install -r requirements.txt
 
