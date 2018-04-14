@@ -53,7 +53,7 @@ jobs:
       - run:
           name: generate image
           command: |
-            tar -cz ~/pita.django/* > /tmp/pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
+            tar -cz ~/pita.django/* > pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
 
       - store_artifacts:
           name: store image
