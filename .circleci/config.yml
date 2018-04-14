@@ -54,7 +54,7 @@ jobs:
           name: Generate Site Image
           command: |
             echo Generating archive pita.tar.gz...
-            tar -cvz --exclude venv --exclude __pycache__ pita.django > pita.tar.gz
+            tar -cvz --exclude venv --exclude __pycache__ . > pita.tar.gz
             echo Done.
 
       - store_artifacts:
