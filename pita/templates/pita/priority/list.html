@@ -1,0 +1,25 @@
+{% load static %}
+{% load admin_urls %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Priority List</title>
+    <link rel="stylesheet" type="text/css" href="{% static "pita/pita.css" %}">
+</head>
+<body>
+<h1>Priorities</h1>
+{% if priority_list %}
+    <dl>
+    {% for priority in priority_list %}
+        <dt><p style="font-weight: bold; display: inline-block;">{{ priority.name }}</p>: <p style="display: inline-block;">{{ priority.long_name }}({{ priority.weight }})</p></dt>
+        <dd><p style="display: inline-block;">{{ priority.description }}</p></dd>
+    {% endfor %}
+    </dl>
+{% else %}
+    <p>No priorities are defined.</p>
+{% endif %}
+[<a href="{% url 'index' %}">Back</a> | <a href="{% url 'admin:pita_priority_changelist' %}">Edit</a> | <a href="{% url 'reset_priorities_confirmation' %}">Reset to default</a>]
+</body>
+</html>

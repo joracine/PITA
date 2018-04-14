@@ -1,0 +1,32 @@
+{% load static %}
+{% load model_icon %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Status System</title>
+    <link rel="stylesheet" type="text/css" href="{% static "pita/pita.css" %}">
+    <style>
+    </style>
+</head>
+<body>
+<h1>General Settings</h1>
+
+<div class="main_menu_item"><a href="{% url 'list_priorities' %}"><img class="small_icon" src="{% static 'Priority'|model_icon %}"/><div class="main_menu_text">Priorities</div></a>
+</div>
+
+<div class="main_menu_item"><a href="{% url 'list_statuses' %}"><img class="small_icon" src="{% static 'Status'|model_icon %}"/><div class="main_menu_text">Statuses</div></a>
+</div>
+<h1>Views</h1>
+<div class="main_menu_item"><a href="{% url 'list_projects' %}"><img class="small_icon" src="{% static 'Project'|model_icon %}"/><div class="main_menu_text">Projects</div></a>
+</div>
+<div class="main_menu_item"><a href="{% url 'list_milestones' %}"><img class="small_icon" src="{% static 'Milestone'|model_icon %}"/><div class="main_menu_text">Milestones</div></a>
+</div>
+<div class="main_menu_item"><a href="{% url 'list_features' %}"><img class="small_icon" src="{% static 'Feature'|model_icon %}"/><div class="main_menu_text">Features</div></a>
+</div>
+<div class="main_menu_item"><a href="{% url 'list_workstreams' %}"><img class="small_icon" src="{% static 'Workstream'|model_icon %}"/><div class="main_menu_text">Workstreams</div></a>
+</div>
+<div class="main_menu_item"><a href="{% url 'list_teams' %}"><img class="small_icon" src="{% static 'Team'|model_icon %}"/><div class="main_menu_text">Teams</div></a>
+</div>
+</body>
+</html>

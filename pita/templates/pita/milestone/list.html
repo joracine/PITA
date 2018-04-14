@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Milestone List</title>
+    <link rel="stylesheet" type="text/css" href="{% static "pita/pita.css" %}">
+    <style>
+        dt {font-weight: bold;}
+    </style>
+</head>
+<body>
+<h1>Milestones</h1>
+{% if milestone_list %}
+    <dl>
+    {% for milestone in milestone_list %}
+        <dt><a href="{% url 'milestone:show' milestone.id %}"><div class="milestone_acronym">{{ milestone.acronym }}</div> {{ milestone.short_name }}</a></dt>
+        <dd>{{ milestone.description }}</dd>
+    {% endfor %}
+    </dl>
+{% else %}
+    <p>No features are available.</p>
+{% endif %}
+<a href="{% url 'index' %}">Back</a>
+</body>
+</html>

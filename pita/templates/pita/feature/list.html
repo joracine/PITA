@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feature List</title>
+    <link rel="stylesheet" type="text/css" href="{% static "pita/pita.css" %}">
+    <style>
+        dt {font-weight: bold;}
+    </style>
+</head>
+<body>
+<h1>Features</h1>
+{% if feature_list %}
+    <dl>
+    {% for feature in feature_list %}
+        <dt><a href="{% url 'feature:show' feature.id %}">{{ feature.name }}</a></dt>
+        <dd>{{ feature.description }}</dd>
+    {% endfor %}
+    </dl>
+{% else %}
+    <p>No features are available.</p>
+{% endif %}
+<a href="{% url 'index' %}">Back</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project List</title>
+    <link rel="stylesheet" type="text/css" href="{% static "pita/pita.css" %}">
+</head>
+<body>
+<h1>Projects</h1>
+{% if project_list %}
+    <dl>
+    {% for project in project_list %}
+        <dt>{{ project.name }}: {{ project.codename }} [{{ project.owner }}]</dt>
+        <dd>{{ project.description }}</dd>
+    {% endfor %}
+    </dl>
+{% else %}
+    <p>No projects are defined.</p>
+{% endif %}
+<a href="{% url 'index' %}">Back</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+{% load rgbcolorfield_extras %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Status List</title>
+    <link rel="stylesheet" type="text/css" href="{% static "pita/pita.css" %}">
+</head>
+<body>
+<h1>Statuses</h1>
+{% if status_list %}
+    <dl>
+        {% for status in status_list %}
+            {% with text_color=status.text_color %}
+                {% with bg_color=status.background_color %}
+                    <dt>
+                        <div class="status"
+                             style="color: {{ text_color|csshex }}; background-color: {{ bg_color|csshex }};">{{ status.name }}</div>
+                    </dt>
+                    <dd><p style="display: inline-block;">{{ status.description }}</p></dd>
+                {% endwith %}
+            {% endwith %}
+        {% endfor %}
+    </dl>
+{% else %}
+    <p>No statuses are defined.</p>
+{% endif %}
+[<a href="{% url 'index' %}">Back</a> | <a href="{% url 'admin:pita_status_changelist' %}">Edit</a> | <a
+        href="{% url 'reset_statuses_confirmation' %}">Reset to default</a>]
+</body>
+</html>

@@ -1,0 +1,80 @@
+/*dl {*/
+/*border: 3px double #ccc;*/
+/*padding: 0.5em;*/
+/*width: 800px;*/
+/*background: ghostwhite;*/
+/*}*/
+
+/*dt {*/
+/*float: left;*/
+/*clear: left;*/
+/*width: 200px;*/
+/*text-align: right;*/
+/*font-weight: bold;*/
+/*color: green;*/
+/*}*/
+
+/*dt::after {*/
+/*content: ":";*/
+/*padding-right: 0.5em;*/
+/*}*/
+
+/*dd {*/
+/*margin: 0 0 0 200px;*/
+/*padding: 0 0 0.5em 0;*/
+/*width: 500px;*/
+/*}*/
+
+.status {
+    border-radius: 5px;
+    border: 1px black solid;
+    font-weight: bold;
+    font-size: small;
+    padding: 0.25em;
+    height: 1em;
+    width: 8em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.small_icon {
+    width: 16px;
+    height: 16px;
+}
+
+.medium_icon {
+    width: 32px;
+    height: 32px;
+}
+
+.large_icon {
+    width: 64px;
+    height: 64px;
+}
+
+h1 {
+    color: black;
+    font-family: "Arial Narrow", "Arial", sans-serif;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.main_menu_item {
+    vertical-align: bottom;
+    padding-left: 0.5em;
+}
+
+.main_menu_text {
+    display: inline-block;
+    color: black;
+    font-family: "Arial Narrow", "Arial", sans-serif;
+    text-decoration: none;
+    padding-bottom: 0.25em;
+}
+.main_menu_text:hover {
+    color: grey;
+}
+
+p {
+    font-family: "Calibri", "Calibri Light", sans-serif;
+}

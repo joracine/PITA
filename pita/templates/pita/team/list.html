@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Team List</title>
+    <link rel="stylesheet" type="text/css" href="{% static "pita/pita.css" %}">
+</head>
+<body>
+<h1>Teams</h1>
+{% if team_list %}
+    <dl>
+    {% for team in team_list %}
+        <dt>{{ team.name }}: {{ team.descriptive_name }} [{{ team.parent }}]</dt>
+        <dd>{{ team.description }}</dd>
+    {% endfor %}
+    </dl>
+{% else %}
+    <p>No teams are defined.</p>
+{% endif %}
+<a href="{% url 'index' %}">Back</a>
+</body>
+</html>

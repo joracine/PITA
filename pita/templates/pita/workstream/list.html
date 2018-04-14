@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workstream List</title>
+    <link rel="stylesheet" type="text/css" href="{% static "pita/pita.css" %}">
+</head>
+<body>
+<h1>Workstreams</h1>
+{% if workstream_list %}
+    <dl>
+    {% for workstream in workstream_list %}
+        <dt>{{ workstream.team }}: {{ workstream.name }} {{ workstream.target_date }} [{{ workstream.status }}]</dt>
+        <dd>{{ workstream.description }}</dd>
+    {% endfor %}
+    </dl>
+{% else %}
+    <p>No workstreams are defined.</p>
+{% endif %}
+<a href="{% url 'index' %}">Back</a>
+</body>
+</html>
