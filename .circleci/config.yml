@@ -53,14 +53,14 @@ jobs:
       - run:
           name: Generate Site Image
           command: |
-            echo Generating archive pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz...
-            tar -cvz --exclude venv --exclude __pycache__ pita.django > pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
+            echo Generating archive pita.tar.gz...
+            tar -cvz --exclude venv --exclude __pycache__ pita.django > pita.tar.gz
             echo Done.
 
       - store_artifacts:
           name: Store Site Image
-          path: pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
-          destination: pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
+          path: pita.tar.gz
+          destination: pita.tar.gz
 
       - store_artifacts:
           name: store tests
