@@ -28,7 +28,7 @@ jobs:
           - v1-dependencies-
 
       - run:
-          name: install dependencies
+          name: Install Dependencies
           command: |
             python3 -m venv venv
             . venv/bin/activate
@@ -45,18 +45,20 @@ jobs:
       # https://pytest.org
       # https://nose.readthedocs.io
       - run:
-          name: run tests
+          name: Run Tests
           command: |
             . venv/bin/activate
             python manage.py test
 
       - run:
-          name: generate image
+          name: Generate Site Image
           command: |
-            tar -cvz --exclude pita.env --exclude __pycache__ pita.django > pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
+            echo Generating archive pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz...
+            tar -cvz --exclude venv --exclude __pycache__ pita.django > pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
+            echo Done.
 
       - store_artifacts:
-          name: store image
+          name: Store Site Image
           path: pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
           destination: pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
 
