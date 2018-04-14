@@ -50,6 +50,17 @@ jobs:
             . venv/bin/activate
             python manage.py test
 
+      - run:
+          name: generate image
+          command: |
+            tar -cz ~/pita.django/* > /tmp/pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
+
       - store_artifacts:
+          name: store image
+          path: pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
+          destination: pita.{{ .Branch }}.{{ .BuildNum }}.{{ epoch }}.tar.gz
+
+      - store_artifacts:
+          name: store tests
           path: test-reports
           destination: test-reports
